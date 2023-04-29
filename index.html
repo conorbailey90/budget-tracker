@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Budget Tracker</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <h2>Budget Tracker</h2>
+        </div>
+    </header>
+    <div class="pie__chart__container">
+        <div class="bar">
+            <div class="close">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <canvas id="c"></canvas>
+        <div class="key">
+            <ul class="key__list"></ul>
+        </div>
+    </div>
+    <main>
+        <div class="main__container">
+            <div class="salary__section">
+                <h4>Income: <span class="salary__view">0</span></h4>
+                <button id="edit__income">Edit Income</button>
+            </div>
+    
+            <button id="add__expense">Add Expense</button>
+            <div class="expenses__section">
+                <ul class="expenses__list"></ul>
+            </div>
+            <div class="total__section">
+                <h3 class="summary__header">Summary</h3></br>
+                <h4>Exepenses total: <span class="total__view"></span></h4></br>
+                <h4>Remaining income: <span class="remaining__income__view"></span></h4></br>
+                <button id="chart__btn">View Chart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODALS -->
+    <div class="income__modal">
+        <div class="modal__container">
+            <label for="">Income</label></br>
+            <input class="salary__input" type="number" value="0" min="0" step="500">
+            <button class="salary__apply__button">apply</button>
+        </div>
+    </div>
+    
+    <div class="expenses__modal">
+        <div class="modal__container">
+            <form action="">
+                <div>
+                    <label for="expense__category__select">Expense Category</label></br>
+                    <select id="expense__category__select"></select>
+                </div>
+                <div>
+                    <label for="expense__name__input">Expense Name</label></br>
+                    <input id="expense__name__input" type="text" placeholder="Enter Name">
+                </div>
+                <div>
+                    <label for="expense__amount__input">Expense Amount</label></br>
+                    <input id="expense__amount__input" type="number" min="0" value="0" step="10">
+                </div>
+                <input class="expenses__modal__submit" type="submit" value="Add">
+                <input class="modal__cancel__btn" type="button" value="Cancel">
+            </form>
+        </div>
+    </div>
+   
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
